@@ -1,18 +1,16 @@
-# def MCD(a, b):
-#     temporal = 0
-#     while b != 0:
-#         temporal = b
-#         b = a % b
-#         a = temporal
-#     return a
-
-from mcd import MCD
-
+# Creamos la Funcion de Calculo de Maximo Comun Divisor que la vamos a utilizar para Calcular el MCM
+def MCD(a, b):
+    temporal = 0
+    while b != 0:
+        temporal = b
+        b = a % b
+        a = temporal
+    return a
+# Definimos la Funcion de Maximo Comun ultiplo
 def MCM(x, y):     
-    maxcm = MCD(x,y)
-    print(maxcm)
-    return (x * y) // maxcm
+    return (x * y) // MCD(x,y)
 
+#Programa Principal
 print(f"Maximo Comun Multiplo.")
 numero1=int(input("Ingrese 1er Numero:"))
 numero2=int(input("Ingrese 2do Numero:"))
