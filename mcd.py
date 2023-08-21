@@ -8,6 +8,7 @@ def MCD(a, b):
     return a
 
 # Solicito el Ingreso de Los dos Numeros
+print(f"Maximo Comun Divisor.")
 numero1 = int(input("Ingrese 1er numero: "))
 numero2 = int(input("Ingrese 2do numero: "))
 
