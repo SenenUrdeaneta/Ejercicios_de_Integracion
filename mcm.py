@@ -1,3 +1,5 @@
+#Escribir una función que calcule el mínimo común múltiplo entre dos números 
+
 # Creamos la Funcion de Calculo de Maximo Comun Divisor que la vamos a utilizar para Calcular el MCM
 def MCD(a, b):
     temporal = 0

@@ -1,3 +1,5 @@
+# Escribir una función que calcule el máximo común divisor entre dos números.
+
 # Defino La Funcion que Calcula el Maximo Comun Divisor
 def MCD(a, b):
     temporal = 0
