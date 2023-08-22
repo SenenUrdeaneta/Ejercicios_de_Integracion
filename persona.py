@@ -21,7 +21,7 @@ class Persona:
         if edad >= 0:
             self.__edad = edad
         else:
-            print("Edad Incorrecta. Tiene que ser un valor positivo")
+            print("Edad Incorrecta, tiene que ser un valor positivo")
 
     def dni_setter(self, dni):
         if len(dni) >= 1 and len(dni) <= 10:
@@ -42,9 +42,9 @@ class Persona:
 
     # Mostrar (3)
     def mostrar(self):
-        print("Nombre:", self.__nomApe)
+        print("Nombre y Apellido:", self.__nomApe)
         print("Edad:", self.__edad)
-        print("DNI:", self.__dni)
+        print("Dni:", self.__dni)
 
     # Validar Edad (4)
     def mayor_de_edad(self):
