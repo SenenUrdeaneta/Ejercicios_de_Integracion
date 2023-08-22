@@ -1,0 +1,42 @@
+# Funcion que Calculo No. Primo
+def es_primo(numero):
+    if numero <= 1:
+        return False
+    if numero <= 3:
+        return True
+    if numero % 2 == 0 or numero % 3 == 0:
+        return False
+    i = 5
+    while i * i <= numero:
+        if numero % i == 0 or numero % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+# Funcion que Calcula el Maximo Comun Divisor
+def MCD(a, b):
+    temporal = 0
+    while b != 0:
+        temporal = b
+        b = a % b
+        a = temporal
+    return a
+
+# Definimos la Funcion de Maximo Comun Multiplo en la misma utilizo la Funcion MCD
+def MCM(x, y):     
+    return (x * y) // MCD(x,y)
+
+# Funcion cuentapalabras y retorna diccionario
+def cuentapalabras(cadena):
+    palabras = cadena.split()
+    dic = {}
+    # Recorremos la cadena 
+    for palabra in palabras:
+        palabra = palabra.strip(".,!¡¿?\"'()[]{}") # Quitamos los Caracteres especiales
+        palabra = palabra.lower() # Convertimos las palabras en minuscula
+        # Contamos las palabras repetidas  y las cargamos en el diccionario
+        if palabra in dic:
+            dic[palabra] = dic[palabra] + 1 
+        else:
+            dic[palabra] = 1
+    return dic

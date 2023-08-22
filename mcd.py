@@ -1,13 +1,6 @@
 # git Escribir una función que calcule el máximo común divisor entre dos números.
 
-# Defino La Funcion que Calcula el Maximo Comun Divisor
-def MCD(a, b):
-    temporal = 0
-    while b != 0:
-        temporal = b
-        b = a % b
-        a = temporal
-    return a
+from integrador_funciones import MCD
 
 # Programa Principal
 print(f"Maximo Comun Divisor.")

@@ -3,7 +3,7 @@
 # que reciba el diccionario generado con la función anterior y devuelva una tupla con la
 # palabra más repetida y su frecuencia.
 
-from 3-frecuencia import cuentapalabras
+from frecuencia import cuentapalabras
 
 resultado = cuentapalabras("Esto es una prueba, de las prueba donde se repiten las palabras y palabras")
 
