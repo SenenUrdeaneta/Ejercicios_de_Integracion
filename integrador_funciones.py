@@ -50,3 +50,23 @@ def masrepetida(dic):
             palabra_ini = palabra
             veces_max = veces
     return palabra_ini, veces_max
+
+# Funcion get_int Versión Iterativa:
+def get_int_ite():
+    while True:
+        try:
+            ve = input("Numero entero:")
+            val = int(ve)
+            return val
+        except ValueError:
+            print("Error en Entrada de Dato No Valida. Vuelva a Intentar")
+
+# Funcion get_int Versión Recursiva
+def get_int_rec():
+    try:
+        ve = input("Numero entero:")
+        val = int(ve)
+        return val
+    except ValueError:
+        print("Error en Entrada de Dato No Valida. Vuelva a Intentar")
+        return get_int_rec()
