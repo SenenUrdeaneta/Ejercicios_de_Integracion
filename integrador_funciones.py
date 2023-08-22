@@ -40,3 +40,13 @@ def cuentapalabras(cadena):
         else:
             dic[palabra] = 1
     return dic
+
+# Funcion retorna palabra mas repetida y veces que se repitio
+def masrepetida(dic):
+    palabra_ini = ""
+    veces_max = 0
+    for palabra, veces in dic.items():
+        if veces > veces_max:
+            palabra_ini = palabra
+            veces_max = veces
+    return palabra_ini, veces_max

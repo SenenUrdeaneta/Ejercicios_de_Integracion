@@ -3,8 +3,11 @@
 # que reciba el diccionario generado con la función anterior y devuelva una tupla con la
 # palabra más repetida y su frecuencia.
 
-from frecuencia import cuentapalabras
+from integrador_funciones import cuentapalabras, masrepetida
 
-resultado = cuentapalabras("Esto es una prueba, de las prueba donde se repiten las palabras y palabras")
 
-print(resultado)
+parrafo = input("Ingresa Parrafo o Cadena: ")
+resultado = cuentapalabras(parrafo)
+tupla = masrepetida(resultado)
+
+print(f"Palabra y veces mas repetida: {tupla} veces")
