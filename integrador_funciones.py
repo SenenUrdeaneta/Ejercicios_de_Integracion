@@ -70,3 +70,72 @@ def get_int_rec():
     except ValueError:
         print("Error en Entrada de Dato No Valida. Vuelva a Intentar")
         return get_int_rec()
+
+class Persona:
+    def __init__(self, nomApe = "", edad=0, dni=""):
+        self.__nomApe = nomApe
+        self.__edad = edad
+        self.__dni = dni
+
+    # Setters (2)
+    def nombreApellido_setter(self, nomApe):
+        self.__nomApe = nomApe
+
+    def edad_setter(self, edad):
+        if edad >= 0:
+            self.__edad = edad
+        else:
+            print("Edad Incorrecta, tiene que ser un valor positivo")
+
+    def dni_setter(self, dni):
+        if len(dni) >= 1 and len(dni) <= 10:
+            self.__dni = dni
+        else:
+            print("DNI no debe tener mas de 10 caracteres.")
+            self.__dni = "Error en No. DNI"
+
+    # Getters (2)
+    def nombreApellido_getter(self):
+        return self.__nomApe
+
+    def edad_getter(self):
+        return self.__edad
+
+    def dni_getter(self):
+        return self.__dni
+
+    # Mostrar (3)
+    def mostrar(self):
+        print("Nombre y Apellido:", self.__nomApe)
+        print("Edad:", self.__edad)
+        print("Dni:", self.__dni)
+
+    # Validar Edad (4)
+    def mayor_de_edad(self):
+        return self.__edad >= 18
+    
+class Cuenta:
+    def __init__(self, titular, cantidad=0.0):
+        self.__titular = titular
+        self.__cantidad = cantidad
+
+    def set_titular(self, titular):
+        self.__titular = titular
+
+    def get_titular(self):
+        return self.__titular
+
+    def get_cantidad(self):
+        return self.__cantidad
+
+    def mostrar(self):
+        print("Titular:", self.__titular.nombreApellido_getter())
+        print("Cantidad:", self.__cantidad)
+
+    def ingresar(self, cantidad):
+        if cantidad > 0:
+            self.__cantidad += cantidad
+
+    def retirar(self, cantidad):
+        if cantidad > 0:
+            self.__cantidad -= cantidad
