@@ -1,8 +1,5 @@
-# git Escribir una función que calcule el máximo común divisor entre dos números.
+from integrador import MCD
 
-from integrador_funciones import MCD
-
-# Programa Principal
 print(f"Maximo Comun Divisor.")
 numero1 = int(input("Ingrese 1er numero: "))
 numero2 = int(input("Ingrese 2do numero: "))

@@ -1,8 +1,5 @@
-#Escribir una función que calcule el mínimo común múltiplo entre dos números 
+from integrador import MCM
 
-from integrador_funciones import MCM
-
-#Programa Principal
 print(f"Maximo Comun Multiplo.")
 numero1=int(input("Ingrese 1er Numero:"))
 numero2=int(input("Ingrese 2do Numero:"))

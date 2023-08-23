@@ -1,13 +1,4 @@
-# Crear una clase llamada Persona. Sus atributos son: nombre, edad y DNI. Construya los
-# siguientes métodos para la clase:
-# (1) Un constructor, donde los datos pueden estar vacíos.
-# (2) Los setters y getters para cada uno de los atributos. Hay que validar las entradas de
-# datos.
-# (3) mostrar(): Muestra los datos de la persona.
-# (4) Es_mayor_de_edad(): Devuelve un valor lógico indicando si es mayor de edad
-
-# Programa Principal
-from integrador_funciones import Persona
+from integrador import Persona
 
 # Intanciamos la Clase con Datos de Prueba
 persona = Persona()
