@@ -12,7 +12,7 @@
 
 
 # Ejemplo de uso
-from integrador_funciones import Persona, Cuenta
+from integrador_funciones import Cuenta, Persona
 
 per1 = Persona("ALberto Alvarez", 53, "123456789")
 cuenta = Cuenta(per1, 1000.0)

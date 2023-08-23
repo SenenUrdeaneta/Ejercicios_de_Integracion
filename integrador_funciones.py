@@ -115,27 +115,55 @@ class Persona:
         return self.__edad >= 18
     
 class Cuenta:
-    def __init__(self, titular, cantidad=0.0):
-        self.__titular = titular
-        self.__cantidad = cantidad
+    def __init__(self, tit, cant=0.0):
+        self.__tit = tit
+        self.__cant = cant
 
-    def set_titular(self, titular):
-        self.__titular = titular
+    def tit_setter(self, titular):
+        self.__tit = tit
 
-    def get_titular(self):
-        return self.__titular
+    def tit_getter(self):
+        return self.__tit
 
-    def get_cantidad(self):
-        return self.__cantidad
+    def cant_getter(self):
+        return self.__cant
 
     def mostrar(self):
-        print("Titular:", self.__titular.nombreApellido_getter())
-        print("Cantidad:", self.__cantidad)
+        print("Titular:", self.__tit.nombreApellido_getter())
+        print("Cantidad:", self.__cant)
 
-    def ingresar(self, cantidad):
-        if cantidad > 0:
-            self.__cantidad += cantidad
+    def ingresar(self, cant):
+        if cant > 0:
+            self.__cant += cant
+
+    def retirar(self, cant):
+        if cant > 0:
+            self.__cant -= cant
+
+# Clase CuentaJoven
+class CuentaJoven(Cuenta):
+    def __init__(self, titular, cantidad=0.0, bonificacion=0.0):
+        super().__init__(titular, cantidad)
+        self.__bonificacion = bonificacion
+
+    def set_bonificacion(self, bonificacion):
+        self.__bonificacion = bonificacion
+
+    def get_bonificacion(self):
+        return self.__bonificacion
+
+    def es_titular_valido(self):
+        if self.tit_getter().mayor_de_edad() and self.tit_getter().edad_getter() < 25:
+            return True
+        return False
 
     def retirar(self, cantidad):
-        if cantidad > 0:
-            self.__cantidad -= cantidad
+        if self.es_titular_valido():
+            super().retirar(cantidad)
+        else:
+            print("No es posible retirar dinero. Titular no válido.")
+
+    def mostrar(self):
+        print("Cuenta Joven")
+        super().mostrar()
+        print("Bonificación:", self.__bonificacion)
