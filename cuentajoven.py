@@ -15,10 +15,10 @@ from integrador_funciones import Cuenta, Persona, CuentaJoven
 
 
 # Ejemplo de uso
-persona_titular_joven = Persona("Ana", 20, "987654321")
-cuenta_joven = CuentaJoven(persona_titular_joven, 5000.0, 5.0)
-cuenta_joven.mostrar()
-cuenta_joven.ingresar(20000.0)
-cuenta_joven.mostrar()
-cuenta_joven.retirar(5000.0)
-cuenta_joven.mostrar()
+per1 = Persona("Jose Gonzalez", 38, "0987654321")
+cj = CuentaJoven(per1, 15000.0, 5.0)
+cj.mostrar()
+cj.retirar(5000.0)
+cj.mostrar()
+cj.ingresar(20000.0)
+cj.mostrar()

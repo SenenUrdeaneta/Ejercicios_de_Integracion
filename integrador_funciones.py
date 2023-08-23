@@ -26,6 +26,8 @@ def MCD(a, b):
 def MCM(x, y):     
     return (x * y) // MCD(x,y)
 
+# Escribir un programa que reciba una cadena de caracteres y devuelva un diccionario con
+# cada palabra que contiene y la cantidad de veces que aparece (frecuencia).
 # Funcion cuentapalabras y retorna diccionario
 def cuentapalabras(cadena):
     palabras = cadena.split()
@@ -41,6 +43,10 @@ def cuentapalabras(cadena):
             dic[palabra] = 1
     return dic
 
+# Escribir una función que reciba una cadena de caracteres y devuelva un diccionario con cada
+# palabra que contiene y la cantidad de veces que aparece (frecuencia). Escribir otra función
+# que reciba el diccionario generado con la función anterior y devuelva una tupla con la
+# palabra más repetida y su frecuencia.
 # Funcion retorna palabra mas repetida y veces que se repitio
 def masrepetida(dic):
     palabra_ini = ""
@@ -51,6 +57,10 @@ def masrepetida(dic):
             veces_max = veces
     return palabra_ini, veces_max
 
+# Sabiendo que ValueError es la excepción que se lanza cuando no podemos convertir una
+# cadena de texto en su valor numérico, escriba una función get_int() que lea un valor entero
+# del usuario y lo devuelva, iterando mientras el valor no sea correcto. Intente resolver el
+# ejercicio tanto de manera iterativa como recursiva.
 # Funcion get_int Versión Iterativa:
 def get_int_ite():
     while True:
@@ -71,6 +81,13 @@ def get_int_rec():
         print("Error en Entrada de Dato No Valida. Vuelva a Intentar")
         return get_int_rec()
 
+# Crear una clase llamada Persona. Sus atributos son: nombre, edad y DNI. Construya los
+# siguientes métodos para la clase:
+# (1) Un constructor, donde los datos pueden estar vacíos.
+# (2) Los setters y getters para cada uno de los atributos. Hay que validar las entradas de
+# datos.
+# (3) mostrar(): Muestra los datos de la persona.
+# (4) Es_mayor_de_edad(): Devuelve un valor lógico indicando si es mayor de edad
 class Persona:
     def __init__(self, nomApe = "", edad=0, dni=""):
         self.__nomApe = nomApe
@@ -113,7 +130,18 @@ class Persona:
     # Validar Edad (4)
     def mayor_de_edad(self):
         return self.__edad >= 18
-    
+
+ # Crea una clase llamada Cuenta que tendrá los siguientes atributos: titular (que es una
+# persona) y cantidad (puede tener decimales). El titular será obligatorio y la cantidad es
+# opcional. Crear los siguientes métodos para la clase:
+# (1) Un constructor, donde los datos pueden estar vacíos.
+# (2) Los setters y getters para cada uno de los atributos. El atributo no se puede modificar
+# directamente, sólo ingresando o retirando dinero.
+# (3) mostrar(): Muestra los datos de la cuenta.
+# (4) ingresar(cantidad): se ingresa una cantidad a la cuenta, si la cantidad introducida es
+# negativa, no se hará nada.
+# (5) retirar(cantidad): se retira una cantidad a la cuenta. La cuenta puede estar en números
+# rojos.   
 class Cuenta:
     def __init__(self, tit, cant=0.0):
         self.__tit = tit
@@ -140,7 +168,18 @@ class Cuenta:
         if cant > 0:
             self.__cant -= cant
 
-# Clase CuentaJoven
+# Vamos a definir ahora una “Cuenta Joven”, para ello vamos a crear una nueva clase
+# CuantaJoven que deriva de la clase creada en el punto 7. Cuando se crea esta nueva clase,
+# además del titular y la cantidad se debe guardar una bonificación que estará expresada en
+# tanto por ciento. Crear los siguientes métodos para la clase:
+# (1) Un constructor.
+# (2) Los setters y getters para el nuevo atributo.
+# (3) En esta ocasión los titulares de este tipo de cuenta tienen que ser mayor de edad, por lo
+# tanto hay que crear un método es_titular_valido() que devuelve verdadero si el titular es
+# mayor de edad pero menor de 25 años y falso en caso contrario.
+# (4) Además, la retirada de dinero sólo se podrá hacer si el titular es válido.
+# (5) El método mostrar() debe devolver el mensaje de “Cuenta Joven” y la bonificación de la
+# cuenta.
 class CuentaJoven(Cuenta):
     def __init__(self, titular, cantidad=0.0, bonificacion=0.0):
         super().__init__(titular, cantidad)
